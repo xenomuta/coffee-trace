@@ -20,7 +20,7 @@ process.on 'uncaughtException', (err) ->
         { line: l, source: _.replace(/(\r\n|\n)/, '') }
     .forEach (l) ->
       if l?
-        console.error " \x1b[01;#{if l.line is line_num then "33" else "30"}m#{if l.line is line_num then "=>" else "  "}" + new Array(line_num.toString().length - l.line.toString().length).join(' ') + l.line + ': ' + l.source
+        console.error " \x1b[01;#{if l.line is line_num then "33" else "30"}m#{if l.line is line_num then "\x1b[31m✘\x1b[37m " else "  "}" + new Array(line_num.toString().length - l.line.toString().length).join(' ') + l.line + ': ' + l.source
     console.error "\x1b[0m  ..."
     
   console.error err.stack
