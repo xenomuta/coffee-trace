@@ -1,5 +1,6 @@
 require '../'
-setTimeout ->
+
+test = ->
   people =
     john:
       first_name: 'john'
@@ -9,5 +10,5 @@ setTimeout ->
       last_name: 'jane'
   
   console.log("Welcome", people[p].first_name, people[p].last_name, "!!!") for p in ['john', 'mary', 'josh']
-,
-1000
+
+process.nextTick test

@@ -23,10 +23,10 @@ process.on 'uncaughtException', (err) ->
         { line: l, source: _.replace(/(\r\n|\n)/, '') }
     .forEach (l) ->
       if l?
-        line = "  \x1b[#{if l.line is _trace.line then "01;33" else "00;38"}m#{if l.line is _trace.line then "=>" else "  "}" + new Array(_trace.line.toString().length - l.line.toString().length).join(' ') + l.line + ': ' + l.source
-        console.error line
+        console.error "  \x1b[#{if l.line is _trace.line then "01;33" else "00;38"}m#{if l.line is _trace.line then "=>" else "  "}" + new Array(_trace.line.toString().length - l.line.toString().length).join(' ') + l.line + ': ' + l.source
         
     console.error "\x1b[0m    ..."
     
   console.error err.stack
+  console.error()
   process.exit()
