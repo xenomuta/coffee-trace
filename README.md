@@ -17,3 +17,7 @@ I've been searching myself for a solution, and have found some very useful [link
 
 Become a masochist by enjoying uncaught exceptions and crashes. Just `require()` it at the very beginning of your app...
 
+### Utopic Future (High Hopes)
+
+I have this crazy idea that someday I'll have some time to make this show the actual coffee-script line corresponding to the trace.
+That's right boyz, full source mapping.
