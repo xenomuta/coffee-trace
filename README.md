@@ -1,6 +1,6 @@
+![Coffee-Trace](https://github.com/xenomuta/coffee-trace/raw/master/img/coffee-trace.png "Coffee-Trace")
 Coffee-Trace: _easier to follow stack-trace for coffee-script_. 
 ===============================================================
-![Coffee-Trace](https://github.com/xenomuta/coffee-trace/raw/master/img/coffee-trace.png "Coffee-Trace")
 
 ### About Coffee-Trace
 If you love Coffee-Script and Node.js as much as me, you will provably also be frustrated by the challenges of quickly finding and debugging the corresponding javascript line on the stack-trace. I wrote Coffee-Trace in an attempt to make this task easier.
