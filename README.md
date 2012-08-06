@@ -8,9 +8,12 @@ If you love Coffee-Script and Node.js as much as me, you will provably also be f
  
 I've been searching myself for a solution, and have found some very useful [links](http://www.adaltas.com/blog/2012/02/15/coffeescript-print-debug-line/ "Coffee script, how do I debug that damn js line?") and [discussions](https://github.com/jashkenas/coffee-script/issues/558 "links and discussions"), but am yet unsatisfied. So, while [SourceMaps](http://www.html5rocks.com/en/tutorials/developertools/sourcemaps/ "SourceMaps") implementation in Coffee-Script is a reality, this is the least I can do.
 
-### Usage
+### Install Usage
 
-Become a masochist by enjoying uncaught exceptions and crashes. Just `require()` it at the very beginning of your app...
+Install with:
+  `npm install coffee-trace`
+
+Become a masochist by enjoying uncaught exceptions and crashes. Just `require()` it at the very beginning of your code...
 
 ### Utopic Future (High Hopes)
 
