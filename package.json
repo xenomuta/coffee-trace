@@ -1,0 +1,8 @@
+{ "name": "Coffee-Trace"
+, "version": "0.0.1"
+, "engines": ["node >= 0.4.0"]
+, "main": "./lib/coffee-trace.coffee"
+, "dependencies": {
+      "coffee-script": "*"
+  }
+}
