@@ -12,9 +12,17 @@ process.on 'uncaughtException', (err) ->
   line_num = Number(coffee_trace[2])
   line_col = Number(coffee_trace[3])
   if /\.coffee$/.test filename
-    console.error "\n\x1b[01;36mCoffee-Trace: \x1b[37m#{filename}:#{line_num}:#{line_col}\x1b[0m"
-    console.error "\x1b[31m ", stack[0], "\x1b[0m"
-    
+    # A very pleasent cup of coffee crash!!!
+    console.error "\n\x1b[01;37m   _..,----,.._"
+    console.error " .-;'-.,____,.-';"
+    console.error "(( |            |"
+    console.error " `))            ;"
+    console.error "  ` \\          /"
+    console.error " .-' `,.____.,' '-."
+    console.error "(     '------'     )"
+    console.error " `-=..________..--' \x1b[0;33m. O o\n"
+    console.error "\x1b[1;37;43mCoffee-Trace:\x1b[0m\x1b[1;37;40m #{filename}\x1b[33m:\x1b[32m#{line_num}\x1b[33m:\x1b[32m#{line_col}\n"
+    console.error " \x1b[41;37m", stack[0], "\x1b[0m"
     console.error "\x1b[0m  ..."
     lines = require('coffee-script').compile(require('fs').readFileSync(filename).toString('utf8')).split(/\n/)
     lines.map (_,l) ->
@@ -24,12 +32,11 @@ process.on 'uncaughtException', (err) ->
     .forEach (l) ->
       if l?
         _line_num = new Array(line_num.toString().length - l.line.toString().length).join(' ') + l.line
-        if l.line is line_num          
-          console.error "\x1b[#{line_num.toString().length + line_col + 4}C\x1b[1A\x1b[01;31m⬇"
-          console.error " \x1b[01;31m✘\x1b[36m " + _line_num + ": \x1b[01;37m" + l.source
+        if l.line is line_num
+          console.error "\x1b[#{line_num.toString().length + line_col + 5}C\x1b[1A\x1b[1;31m▼"
+          console.error " \x1b[1;31m✘\x1b[36m " + _line_num + ": \x1b[1;37m" + l.source
         else
-          console.error " \x1b[0;36m  " + _line_num + ": \x1b[01;30m" + l.source
-          # console.error " \x1b[01;#{if l.line is line_num then "33" else "30"}m#{if l.line is line_num then "\x1b[31m✘\x1b[37m " else "  "}" + new Array(line_num.toString().length - l.line.toString().length).join(' ') + l.line + ': ' + l.source
+          console.error " \x1b[0;36m  " + _line_num + ": \x1b[1;30m" + l.source
     console.error "\x1b[0m  ..."
     
   console.error stack.join("\n")
