@@ -7,7 +7,7 @@
 
 process.on 'uncaughtException', (err) ->
   margin = 3  # Shown lines before and after trace line.
-  coffee_trace = (stack = err.stack.split("\n"))[1].match(/^    at ((?:\w+:\/\/)?[^:]+):(\d+):(\d+)/) or []
+  coffee_trace = (stack = err.stack.split("\n"))[1].match(/^ +at [^\/]+((?:\w+:\/\/)?[^:]+):(\d+):(\d+)/) or []
   filename = coffee_trace[1]
   line_num = Number(coffee_trace[2])
   line_col = Number(coffee_trace[3])
