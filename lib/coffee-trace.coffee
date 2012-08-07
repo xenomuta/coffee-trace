@@ -7,7 +7,7 @@
 
 process.on 'uncaughtException', (err) ->
   margin = 3  # Shown lines before and after trace line.
-  coffee_trace = (stack = err.stack.split("\n"))[1].match(/^ +at [^\/]+((?:\w+:\/\/)?[^:]+):(\d+):(\d+)/) or []
+  coffee_trace = (stack = err.stack.split("\n"))[1].match(/^ +at[^\/]+((?:\w+:\/\/)?[^:]+):(\d+):(\d+)/) or []
   filename = coffee_trace[1]
   line_num = Number(coffee_trace[2])
   line_col = Number(coffee_trace[3])
@@ -21,7 +21,7 @@ process.on 'uncaughtException', (err) ->
     console.error " .-' `,.____.,' '-."
     console.error "(     '------'     )"
     console.error " `-=..________..--' \x1b[0;33m. O o\n"
-    console.error "\x1b[1;37;43mCoffee-Trace:\x1b[0m\x1b[1;37;40m #{filename}\x1b[33m:\x1b[32m#{line_num}\x1b[33m:\x1b[32m#{line_col}\n"
+    console.error "\x1b[1;31;43mCoffee-Trace:\x1b[0m\x1b[1;37;40m #{filename}\x1b[33m:\x1b[32m#{line_num}\x1b[33m:\x1b[32m#{line_col}\n"
     console.error " \x1b[41;37m", stack[0], "\x1b[0m"
     console.error "\x1b[0m  ..."
     lines = require('coffee-script').compile(require('fs').readFileSync(filename).toString('utf8')).split(/\n/)
