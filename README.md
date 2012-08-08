@@ -38,9 +38,14 @@ I've been searching a cleaner solution myself, and have found some very useful [
 
 ### Install and Usage
 Become a masochist by enjoying `uncaughtExceptions` and crashes. Just by installing with:
+
   `npm install coffee-trace`
 
-and `require()`ing at the very beginning of your code...
+and at the very beginning of your code:
+
+```coffescript
+require 'coffee-trace'
+```
 
 ### Utopic Future (High Hopes)
 
