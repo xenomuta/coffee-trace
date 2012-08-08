@@ -10,21 +10,22 @@ Coffee-Trace makes debugging coffeescript code easier by attempting to point cor
 ### Example
 Running this..
 
-coffeescript:
-  require '../'
+```coffeescript
+require '../'
 
-  test = ->
-    people =
-      john:
-        first_name: 'john'
-        last_name: 'doe'
-      mary:
-        first_name: 'mary'
-        last_name: 'jane'
-  
-    console.log("Welcome", people[p].first_name, people[p].last_name, "!!!") for p in ['john', 'mary', 'josh']
+test = ->
+  people =
+    john:
+      first_name: 'john'
+      last_name: 'doe'
+    mary:
+      first_name: 'mary'
+      last_name: 'jane'
 
-  process.nextTick test
+  console.log("Welcome", people[p].first_name, people[p].last_name, "!!!") for p in ['john', 'mary', 'josh']
+
+process.nextTick test
+```
 
 will result in this:
 ![Coffee-Trace](https://github.com/xenomuta/coffee-trace/raw/master/img/example.png "Coffee-Trace example")
