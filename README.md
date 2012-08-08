@@ -11,7 +11,7 @@ Coffee-Trace makes debugging coffeescript code easier by attempting to point cor
 Running this..
 
 ```coffeescript
-require '../'
+require('coffee-trace')
 
 test = ->
   people =
@@ -44,7 +44,7 @@ Become a masochist by enjoying `uncaughtExceptions` and crashes. Just by install
 and at the very beginning of your code:
 
 ```coffescript
-require 'coffee-trace'
+require('coffee-trace')
 ```
 
 ### Utopic Future (High Hopes)
