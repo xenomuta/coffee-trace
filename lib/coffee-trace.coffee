@@ -36,16 +36,25 @@ module.exports = coffee_trace = (options={ascii_art:true})->
       draw_coffee_cup() if options.ascii_art
       console.error "\x1b[1;41;37m ❛●•・Coffee-Trace \x1b[0m"
       
-      # If coffee-script crash line found then print source-code
+      # If coffee-script crash line or block found then print source-code
       if (block = block_finder(filename, trace_lines))?
         {start,end,lines,crash_line} = block
-        console.error "\n\x1b[0;33m CoffeeScript:\x1b[0m\x1b[1;37m #{filename}\x1b[33m:\x1b[32m#{crash_line}\x1b[0m"
-        for line, idx in lines
-          i = start + idx
-          _line_num = new Array((crash_line + margin).toString().length - i.toString().length + 1).join(' ') + i.toString()
-          if i is crash_line
-            console.error " \x1b[1;31m✘\x1b[36m #{_line_num}: \x1b[1;37m#{line}"
-          else
+        if crash_line?
+          console.error "\n\x1b[0;33m CoffeeScript:\x1b[0m\x1b[1;37m #{filename}\x1b[33m:\x1b[32m#{crash_line}\x1b[0m"
+          coffee_lines = coffee_source.split('\n')
+          for i in [(crash_line - margin)..(crash_line + margin)]
+            _line_num = new Array((crash_line + margin).toString().length - i.toString().length + 1).join(' ') + i.toString()
+            continue if crash_line - margin < 1
+            line = coffee_lines[i - 1]
+            if i is crash_line
+              console.error " \x1b[1;31m✘\x1b[36m #{_line_num}: \x1b[1;37m#{line}"
+            else
+              console.error " \x1b[0;36m  #{_line_num}: \x1b[1;30m#{line}"            
+        else
+          console.error "\n\x1b[0;33m CoffeeScript:\x1b[0m\x1b[1;37m #{filename}\x1b[0m"
+          for line, idx in lines
+            i = start + idx
+            _line_num = new Array(end.toString().length - i.toString().length + 1).join(' ') + i.toString()
             console.error " \x1b[0;36m  #{_line_num}: \x1b[1;30m#{line}"
             
       console.error "\n\x1b[0;33m Javascript:\x1b[0m\x1b[1;37m #{filename}\x1b[33m:\x1b[32m#{line_num}\x1b[33m:\x1b[32m#{line_col}\x1b[0m"
