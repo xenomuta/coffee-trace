@@ -1,4 +1,7 @@
 # Coffee-Trace
+
+[![Build Status](https://travis-ci.org/xenomuta/coffee-trace.png?branch=master)](https://travis-ci.org/xenomuta/coffee-trace)
+
 _Makes debugging coffee-script easier by displaying corresponding lines of code in the stack-trace with style_
 
 ![Coffee-Trace](https://github.com/xenomuta/coffee-trace/raw/master/img/coffee-trace.png "Coffee-Trace")
