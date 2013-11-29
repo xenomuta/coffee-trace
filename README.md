@@ -9,7 +9,7 @@ _Makes debugging coffee-script easier by displaying corresponding lines of code 
 ### About Coffee-Trace
 Coffee-Trace makes debugging coffeescript code easier by attempting to point corresponding coffeescript code and line numbers and styling the stacktrace a little bit.
 
-**WARNING**: This is obviously for aiding development needs and by no means intended for production use. It is also, by far, my ugliest piece of code. You've been warned.
+**WARNING**: This is obviously for suited development needs and by no means intended for production use. It is also, by far, my ugliest piece of code. You've been warned.
 
 ### Install and Usage
 Unleash your inner masochist and enjoy `uncaughtException` and stack-traces, just by installing with:
