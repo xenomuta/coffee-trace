@@ -1,8 +1,40 @@
-{ "name": "coffee-trace"
-, "version": "1.3.4"
-, "engines": ["node >= 0.4.0"]
-, "main": "./lib/coffee-trace.coffee"
-, "dependencies": {
-      "coffee-script": "*"
-  }
+{
+  "name": "coffee-trace",
+  "version": "1.4.0",
+  "engines": [
+    "node >= 0.4.0"
+  ],
+  "main": "./lib/coffee-trace.coffee",
+  "dependencies": {
+    "coffee-script": "*"
+  },
+  "description": "_makes debugging coffee-script easier by displaying corresponding lines of code in the stack-trace with style_",
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {
+    "coffee-script": "~1.6.3",
+    "mocha": "~1.14.0"
+  },
+  "scripts": {
+    "test": "node_modules/mocha/bin/mocha -R spec -G test/index.coffee --compilers coffee:coffee-script"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/xenomuta/coffee-trace"
+  },
+  "keywords": [
+    "coffee-script",
+    "sourcemaps",
+    "coffee-trace",
+    "debugging",
+    "stack",
+    "trace"
+  ],
+  "author": "Rilke Petrosky Ulloa <xenomuta@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xenomuta/coffee-trace/issues"
+  },
+  "homepage": "https://github.com/xenomuta/coffee-trace"
 }
