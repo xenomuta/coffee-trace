@@ -12,7 +12,11 @@ draw_coffee_cup = ->
   \\      /  ❛
    `----'  ・❛●•・\x1b[0m"""
 
-module.exports = coffee_trace = (options={ascii_art:true})->
+options = { ascii_art:true }
+
+module.exports = coffee_trace = (newOptions = {})->
+  options.ascii_art = newOptions.ascii_art if newOptions.ascii_art?
+  
   process.on 'uncaughtException', (err) ->
     margin = 3  # Shown lines before and after trace line.
     coffee_trace = (stack = err.stack.split("\n"))[1].match(/^ +at[^\/]+((?:\w+:\/\/)?[^:]+):(\d+):(\d+)/) or []
