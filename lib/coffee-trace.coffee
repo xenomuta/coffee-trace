@@ -25,7 +25,7 @@ module.exports = coffee_trace = (newOptions = {})->
 
   process.on 'uncaughtException', (err) ->
     margin = 3  # Shown lines before and after trace line.
-    coffee_trace = (stack = err.stack.split("\n"))[1].match(options.stack_matcher) or []
+    coffee_trace = (stack = err.stack.split("\n"))[1]?.match(options.stack_matcher) or []
     filename = coffee_trace[1]
     line_num = Number(coffee_trace[2])
     line_col = Number(coffee_trace[3])
@@ -79,7 +79,7 @@ module.exports = coffee_trace = (newOptions = {})->
 
       spaces = new Array(Math.round(max_line_length / 2)).join(" ")
 
-    stack[1] = stack[1].replace(/\.coffee:/, ".js:")
+    stack[1] = stack[1]?.replace(/\.coffee:/, ".js:")
     console.error "\x1b[0m\n", stack.join("\n")
     console.error()
     process.exit()
