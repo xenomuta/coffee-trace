@@ -47,7 +47,7 @@ will result in this:
 ![Coffee-Trace](https://github.com/xenomuta/coffee-trace/raw/master/img/example.png "Coffee-Trace example")
 
 ### Why?
-If you love Coffee-Script and Node.js, you will provably also be frustrated by the challenges of quickly finding and debugging the coffee-script line corresponding to the one pointed out by the stack-trace.
+If you love Coffee-Script and Node.js, you will probably also be frustrated by the challenges of quickly finding and debugging the coffee-script line corresponding to the one pointed out by the stack-trace.
 
 I've been searching a cleaner solution myself, and have found some very useful [links](http://www.adaltas.com/blog/2012/02/15/coffeescript-print-debug-line/ "Coffee script, how do I debug that damn js line?") and [discussions](https://github.com/jashkenas/coffee-script/issues/558 "links and discussions"), but am yet unsatisfied. So, while [SourceMaps](http://www.html5rocks.com/en/tutorials/developertools/sourcemaps/ "SourceMaps") implementation in Coffee-Script is a reality, this is the least I can do.
 
